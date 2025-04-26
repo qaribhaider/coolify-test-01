@@ -30,7 +30,9 @@ setupCounter(document.querySelector("#counter"));
 // Fetch data from API
 async function fetchData() {
   try {
-    const response = await fetch("http://localhost:3000");
+    const response = await fetch(
+      import.meta.env.VITE_API_URL || "http://localhost:3000"
+    );
     const data = await response.json();
     document.querySelector("#message").textContent = data.message;
     document.querySelector("#random-number").textContent = data.randomNumber;

@@ -5,6 +5,8 @@ services:
     build:
       context: ./ui
       dockerfile: Dockerfile
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
     depends_on:
       - api
     networks:
@@ -15,7 +17,7 @@ services:
       context: ./api
       dockerfile: Dockerfile
     environment:
-      - UI_URL=${UI_URL:-http://localhost:8081}
+      - UI_URL=${UI_URL}
     networks:
       - app-network
 

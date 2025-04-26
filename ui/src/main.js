@@ -31,7 +31,7 @@ setupCounter(document.querySelector("#counter"));
 async function fetchData() {
   try {
     const response = await fetch(
-      import.meta.env.VITE_API_URL || "http://localhost:3000"
+      import.meta.env.VITE_API_URL || "http://localhost:3010"
     );
     const data = await response.json();
     document.querySelector("#message").textContent = data.message;

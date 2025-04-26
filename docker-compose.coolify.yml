@@ -5,6 +5,8 @@ services:
     build:
       context: ./ui
       dockerfile: Dockerfile
+      args:
+        - VITE_API_URL
     environment:
       - VITE_API_URL=${VITE_API_URL}
     depends_on:

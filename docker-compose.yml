@@ -16,6 +16,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    environment:
+      - UI_URL=http://localhost:8081
     networks:
       - app-network
 
